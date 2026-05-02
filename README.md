@@ -1,64 +1,113 @@
-# Gerador de Senhas Seguras
+﻿# Gerador de Senhas Seguras
 
-Mini-projeto Java com interface web simples para gerar senhas fortes e configuráveis.
+Um pequeno projeto Java que fornece uma interface web leve para gerar senhas fortes com opções de personalização. O objetivo é demonstrar um aplicativo completo com geração segura de senhas, servidor HTTP embutido e cobertura de testes.
 
-## Recursos
+## O que é este projeto
 
-- Gera senhas com comprimento customizável.
-- Permite escolher letras maiúsculas/minúsculas, dígitos e símbolos.
-- Usa `SecureRandom` e método `random_int()` para selecionar caracteres.
-- Interface web leve acessível em `http://localhost:4567`.
-- Testes com JUnit 5.
-- Estrutura gerada com apoio do Copilot para organização e implementação.
+Este aplicativo gera senhas aleatórias usando `SecureRandom` e permite ao usuário escolher:
+
+- comprimento da senha,
+- inclusão de letras maiúsculas,
+- inclusão de letras minúsculas,
+- inclusão de dígitos,
+- inclusão de símbolos.
+
+A aplicação expõe uma página web simples em `http://localhost:4567` para facilitar o uso.
+
+## Por que usar
+
+- Geração de senhas segura com `SecureRandom`
+- Interface web sem dependências externas de servidor
+- Código modular e fácil de entender
+- Testes unitários para garantir comportamento esperado
+
+## Tecnologias usadas
+
+- Java 25
+- Maven
+- JUnit 5
+- Servidor HTTP embutido do JDK (`com.sun.net.httpserver`)
 
 ## Pré-requisitos
 
-- Java 17 ou superior
-- Maven 3.8+
-- `make` (opcional, para usar o `Makefile`)
+- Java 25 instalado
+- Maven 3.8+ instalado
+- Acesso à linha de comando
+
+> Se você estiver usando o projeto em um ambiente Windows, execute os comandos no PowerShell.
 
 ## Como executar
 
-Execute no diretório do projeto:
+No diretório do projeto:
 
-```bash
+```powershell
 mvn clean package
 mvn exec:java -Dexec.mainClass=com.example.passwordgen.App
 ```
 
-Ou usando o `Makefile`:
+Depois, abra o navegador em:
+
+```text
+http://localhost:4567
+```
+
+### Alternativa com Makefile
+
+Se você tiver o `make` instalado, use:
 
 ```bash
 make run
 ```
 
-Depois, abra no navegador:
-
-```
-http://localhost:4567
-```
-
 ## Estrutura do projeto
 
-- `src/main/java/com/example/passwordgen/PasswordGenerator.java` — lógica de geração da senha
-- `src/main/java/com/example/passwordgen/WebServer.java` — servidor HTTP simples
-- `src/main/java/com/example/passwordgen/App.java` — ponto de entrada da aplicação
-- `src/test/java/com/example/passwordgen/PasswordGeneratorTest.java` — testes unitários
-- `pom.xml` — configuração do Maven
-- `Makefile` — comandos de build e execução
+```text
+ProjetoAKCIT/
+├── .gitignore          # Arquivos e pastas ignoradas pelo Git
+├── LICENSE             # Licença do projeto
+├── Makefile            # Atalhos para build e execução
+├── pom.xml             # Configuração do Maven
+├── README.md           # Documentação do projeto
+├── src/
+│   ├── main/java/com/example/passwordgen/
+│   │   ├── App.java            # Ponto de entrada da aplicação
+│   │   ├── PasswordGenerator.java # Lógica de geração de senha
+│   │   └── WebServer.java      # Servidor HTTP e handlers
+│   └── test/java/com/example/passwordgen/
+│       └── PasswordGeneratorTest.java # Testes unitários
+└── target/              # Artefatos gerados pelo Maven (ignorado no Git)
+```
 
 ## Testes
 
-Para rodar os testes:
+Execute o conjunto de testes automatizados com:
 
 ```bash
 mvn test
 ```
 
-## Notas
+O projeto inclui testes para verificar que:
 
-- O servidor web é implementado usando o servidor HTTP embutido do JDK, sem dependências externas para a interface.
-- O gerador garante que cada tipo de caractere selecionado apareça pelo menos uma vez na senha.
+- senhas geradas contêm letras maiúsculas quando selecionadas,
+- senhas geradas contêm letras minúsculas quando selecionadas,
+- senhas vazias não são aceitas,
+- tamanho mínimo e requisitos de tipos são validados corretamente.
+
+## Organização do repositório
+
+O repositório está estruturado para ser claro e fácil de navegar:
+
+- `src/main/java` contém o código fonte da aplicação.
+- `src/test/java` contém os testes unitários.
+- `pom.xml` define dependências, plugins e configuração de compilação.
+- `.gitignore` impede que artefatos de build e configurações locais sejam enviados ao Git.
+
+## Como contribuir
+
+1. Faça um fork do repositório.
+2. Crie uma branch com a sua melhoria: `git checkout -b minha-melhoria`
+3. Faça as alterações e rode os testes: `mvn test`
+4. Abra um pull request explicando a mudança.
 
 ## Licença
 
