@@ -12,7 +12,7 @@ Este aplicativo gera senhas aleatórias usando `SecureRandom` e permite ao usuá
 - inclusão de dígitos,
 - inclusão de símbolos.
 
-A aplicação expõe uma página web simples em `http://localhost:4567` para facilitar o uso.
+A aplicação expõe uma página web simples em `http://localhost` para facilitar o uso.
 
 ## Por que usar
 
@@ -48,7 +48,7 @@ mvn exec:java -Dexec.mainClass=com.example.passwordgen.App
 Depois, abra o navegador em:
 
 ```text
-http://localhost:4567
+http://localhost
 ```
 
 ### Alternativa com Makefile
