@@ -86,6 +86,27 @@ Execute o conjunto de testes automatizados com:
 mvn test
 ```
 
+### Teste End-to-End
+
+O projeto inclui um script E2E para validar o fluxo de usuário completo:
+
+```powershell
+.\e2e-test.ps1
+```
+
+O script:
+
+- compila o projeto com `mvn clean package`
+- inicia a aplicação localmente
+- verifica a página inicial
+- verifica o endpoint `/generate`
+
+O projeto também oferece um alvo `make` para executar o teste E2E:
+
+```bash
+make e2e
+```
+
 O projeto inclui testes para verificar que:
 
 - senhas geradas contêm letras maiúsculas quando selecionadas,

@@ -9,5 +9,8 @@ run: build
 test:
 	mvn test
 
+e2e:
+	powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\e2e-test.ps1
+
 clean:
 	mvn clean

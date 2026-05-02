@@ -14,3 +14,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+e2e-app.err
+e2e-result.txt
