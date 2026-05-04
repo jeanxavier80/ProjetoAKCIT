@@ -149,12 +149,12 @@ O repositório está estruturado para ser claro e fácil de navegar:
 
 ## Assistência de IA
 
-Este projeto foi construído com auxílio de uma inteligência artificial especializada em desenvolvimento de software. A IA contribuiu para:
+Este projeto foi construído com auxílio do VS CODE e GitHub Copilot uma inteligência artificial especializada em desenvolvimento de software. A IA contribuiu para:
 
-- definir a estrutura do projeto Maven;
-- implementar o servidor HTTP leve e o gerador de senhas seguras;
-- criar testes unitários e um script de teste end-to-end;
-- documentar o uso, a execução e o fluxo do projeto no README.
+- Auxiliar na definição da estrutura do projeto Maven;
+- Apoio na implementação do servidor HTTP leve e o gerador de senhas seguras;
+- Na criação de testes unitários e um script de teste end-to-end;
+- Apoio na documentação o uso, a execução e o fluxo do projeto no README.
 
 Essa colaboração acelerou o desenvolvimento e ajudou a manter o código claro e bem documentado.
 
