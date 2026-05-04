@@ -59,6 +59,21 @@ Se você tiver o `make` instalado, use:
 make run
 ```
 
+## Variáveis de ambiente
+
+Este projeto não exige um arquivo `.env` para rodar, mas você pode definir as variáveis abaixo para reproduzir o ambiente de execução usado nos testes:
+
+```env
+JAVA_HOME=C:\Users\seu-usuario\.jdk\jdk-25.0.2
+MAVEN_OPTS=-Xmx512m
+```
+
+No Windows PowerShell, defina o `JAVA_HOME` assim:
+
+```powershell
+$env:JAVA_HOME = 'C:\Users\seu-usuario\.jdk\jdk-25.0.2'
+```
+
 ## Estrutura do projeto
 
 ```text
@@ -85,6 +100,8 @@ Execute o conjunto de testes automatizados com:
 ```bash
 mvn test
 ```
+
+O projeto foi testado com Java 25 e Maven 3.9.15.
 
 ### Teste End-to-End
 
